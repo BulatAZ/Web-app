@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using RequestAccounting3.Areas.Implimentation;
-using RequestAccounting3.Areas.Interfaces;
-using RequestAccounting3.Models;
-
-namespace RequestAccounting3
+﻿namespace RequestAccounting3
 {
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
+    using RequestAccounting3.Areas.Implimentation;
+    using RequestAccounting3.Areas.Interfaces;
+    using RequestAccounting3.Models;
+
     public class Startup
     {
         //опционально в Startup можно определить конструктор класса и метод ConfigureServices().
@@ -19,7 +21,7 @@ namespace RequestAccounting3
 
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
         // регистрирует сервисы, которые используются приложением.
         // чтобы использовать некоторые сервисы, их вначале надо зарегистрировать. 
@@ -27,11 +29,11 @@ namespace RequestAccounting3
         {
             // добавляем контекст RequestContext в качестве сервиса в приложение
             services.AddDbContext<RequestDBContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("RequestsDBConnection")));
+                options.UseSqlServer(this.Configuration.GetConnectionString("RequestsDBConnection")));
             
             // контекст User для работы с пользователями
             services.AddDbContext<UserDBContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("UsersDBConnection")));
+                options.UseSqlServer(this.Configuration.GetConnectionString("UsersDBConnection")));
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<UserDBContext>();
@@ -49,8 +51,7 @@ namespace RequestAccounting3
             /*Таким образом, если имя среды имеет значение "Development", то есть приложение находится
             в состоянии разработки, то при ошибке разработчик увидит детальное описание ошибки. 
             Если же приложение развернуто на хостинге и соответственно имеет другое имя хостирующей среды, 
-            то простой пользователь при ошибке ничего не увидит. Таким образом,
-            в зависимости от стадии, на которой находится проект, мы можем скрывать или задействовать часть функционала приложения.*/
+            то простой пользователь при ошибке ничего не увидит*/
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

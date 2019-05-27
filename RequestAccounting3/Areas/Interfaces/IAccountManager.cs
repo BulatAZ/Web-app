@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
-using RequestAccounting3.Models.Users;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Areas.Interfaces
+﻿namespace RequestAccounting3.Areas.Interfaces
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Identity;
+
+    using RequestAccounting3.Models.Users;
+
     public interface IAccountManager
     {
-        IdentityResult result { get; set; }
+        IdentityResult identityResult { get; set; }
 
         Task<bool> RegisterAsync(RegisterViewModel newUser);
 

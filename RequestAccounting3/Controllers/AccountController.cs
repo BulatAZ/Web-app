@@ -33,7 +33,7 @@ namespace RequestAccounting3.Controllers
                 }
                 else
                 {
-                    foreach (var error in account.result.Errors)
+                    foreach (var error in account.identityResult.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }

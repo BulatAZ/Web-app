@@ -1,11 +1,11 @@
-﻿using RequestAccounting3.Models.Customers;
-using RequestAccounting3.Models.Requests;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace RequestAccounting3.Models
+﻿namespace RequestAccounting3.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    using RequestAccounting3.Models.Customers;
+
     public class Request
     {
         [Key]

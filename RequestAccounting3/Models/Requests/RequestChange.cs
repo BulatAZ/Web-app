@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models.Requests
+﻿namespace RequestAccounting3.Models.Requests
 {
+    using System;
+
     public class RequestChange
     {       
         public int id { get; set; }

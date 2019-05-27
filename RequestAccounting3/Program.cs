@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using RequestAccounting3.Areas.Initialize;
-using RequestAccounting3.Models;
-
-namespace RequestAccounting3
+﻿namespace RequestAccounting3
 {
+    using System;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
+    using RequestAccounting3.Areas.Initialize;
+    using RequestAccounting3.Models;
+
     public class Program
     {
         //public static async Task Main(string[] args)
@@ -41,9 +39,6 @@ namespace RequestAccounting3
                 }
             }*/
             host.Run();
-            //IdentityUser ii = new IdentityUser();
-            //ii.Id = 454;
-
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

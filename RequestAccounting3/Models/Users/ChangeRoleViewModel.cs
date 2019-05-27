@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models.Users
+﻿namespace RequestAccounting3.Models.Users
 {
+    using System.Collections.Generic;
+
+    using Microsoft.AspNetCore.Identity;
+
     public class ChangeRoleViewModel
     {
         public string UserId { get; set; }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models.Customers
+﻿namespace RequestAccounting3.Models.Customers
 
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Customer
     {
         [Key]

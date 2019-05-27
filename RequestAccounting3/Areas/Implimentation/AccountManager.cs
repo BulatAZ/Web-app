@@ -1,29 +1,33 @@
-﻿using Microsoft.AspNetCore.Identity;
-using RequestAccounting3.Areas.Interfaces;
-using RequestAccounting3.Models;
-using RequestAccounting3.Models.Users;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Areas.Implimentation
+﻿namespace RequestAccounting3.Areas.Implimentation
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Identity;
+
+    using RequestAccounting3.Areas.Interfaces;
+    using RequestAccounting3.Models;
+    using RequestAccounting3.Models.Users;
+
     public class AccountManager : IAccountManager
     {
 
-        private readonly SignInManager<User> _signInManager;
-        private readonly UserManager<User> _userManager;
-        public IdentityResult result { get; set; }
+        private readonly SignInManager<User> signInManager;
+        private readonly UserManager<User> userManager;
+
+        public IdentityResult identityResult { get; set; }
+
         private User user;
 
         public AccountManager(SignInManager<User> signInManager, UserManager<User> userManager)
         {
-            this._signInManager = signInManager;
-            this._userManager = userManager;
+            this.signInManager = signInManager;
+            this.userManager = userManager;
         }
 
         public async Task<bool> SignInAsync(LoginViewModel user)
         {
             //последний параметр: блокировка при сбое = false 
-            var outcome = await _signInManager.PasswordSignInAsync(user.UserName, user.Password, user.RememberMe, false);
+            var outcome = await this.signInManager.PasswordSignInAsync(user.UserName, user.Password, user.RememberMe, false);
             return outcome.Succeeded;           
         }
 
@@ -36,24 +40,25 @@ namespace RequestAccounting3.Areas.Implimentation
                 lastName = newUser.lastName,
                 PhoneNumber = newUser.Phone
             };
+
             // добавляем пользователя
-            var result = await _userManager.CreateAsync(user, newUser.Password);           
+            var result = await this.userManager.CreateAsync(this.user, newUser.Password);           
             return result.Succeeded;           
         }
 
         public async Task SigOutAsync()
         {           
-            await _signInManager.SignOutAsync();
+            await this.signInManager.SignOutAsync();
         }
 
         public async Task SignInAsync(RegisterViewModel newUser, bool isPersistant)
         {           
-            await _signInManager.SignInAsync(user, isPersistant);
+            await this.signInManager.SignInAsync(this.user, isPersistant);
         }
 
         public async Task<string> GetUserIdAsync(string userName)
         {            
-           User user = await _userManager.FindByNameAsync(userName);
+           var user = await this.userManager.FindByNameAsync(userName);
            return user.Id;
         }
     }

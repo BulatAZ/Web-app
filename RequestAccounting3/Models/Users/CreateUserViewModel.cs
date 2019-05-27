@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models.Users
+﻿namespace RequestAccounting3.Models.Users
 {
     public class CreateUserViewModel
     {

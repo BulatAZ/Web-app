@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models.Requests
+﻿namespace RequestAccounting3.Models.Requests
 {
+    using System;
+
     public class RequestView
     {
        

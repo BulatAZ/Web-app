@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RequestAccounting3.Models.Customers;
-
-namespace RequestAccounting3.Models
+﻿namespace RequestAccounting3.Models
 {
+    using Microsoft.EntityFrameworkCore;
+
+    using RequestAccounting3.Models.Customers;
+
     public class RequestDBContext : DbContext
     {
         public DbSet<Request> Requests { get; set; }
@@ -15,7 +16,7 @@ namespace RequestAccounting3.Models
         {
             // В конструкторе с помощью вызова Database.EnsureCreated() по определению моделей будет создаваться база данных
             // (если она отсутствует). Подход CodeFirst
-            Database.EnsureCreated();
+            this.Database.EnsureCreated();
         }
     }
 }

@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using RequestAccounting3.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Areas.Initialize
+﻿namespace RequestAccounting3.Areas.Initialize
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Identity;
+
+    using RequestAccounting3.Models;
+
     public class SampleData
     {              
        
@@ -20,11 +19,11 @@ namespace RequestAccounting3.Areas.Initialize
                     new Status { name = "Registered" },
                     new Status { name = "Processed" },
                     new Status { name = "Closed" },
-                    new Status { name = "Rejected" }
-                );
+                    new Status { name = "Rejected" });
                 context.SaveChanges();
             }
         }
+
         public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             string adminName = "admin";            
@@ -36,10 +35,12 @@ namespace RequestAccounting3.Areas.Initialize
             {
                 await roleManager.CreateAsync(new IdentityRole("admin"));
             }
+
             if (await roleManager.FindByNameAsync("engineer") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("engineer"));
             }
+
             if (await roleManager.FindByNameAsync("operator") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("operator"));
@@ -47,7 +48,7 @@ namespace RequestAccounting3.Areas.Initialize
 
             if (await userManager.FindByNameAsync(adminName) == null)
             {
-                User admin = new User { UserName = adminName, firstName = adminName };
+                var admin = new User { UserName = adminName, firstName = adminName };
                 IdentityResult result = await userManager.CreateAsync(admin, superPassword);
                 if (result.Succeeded)
                 {
@@ -67,7 +68,7 @@ namespace RequestAccounting3.Areas.Initialize
 
             if (await userManager.FindByNameAsync(operatorName) == null)
             {
-                User user = new User { UserName = operatorName, firstName = operatorName };
+                var user = new User { UserName = operatorName, firstName = operatorName };
                 IdentityResult result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {

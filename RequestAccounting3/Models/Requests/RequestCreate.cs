@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace RequestAccounting3.Models.Requests
+﻿namespace RequestAccounting3.Models.Requests
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class RequestCreate
     {
        

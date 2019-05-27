@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Models
+﻿namespace RequestAccounting3.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Status
     {
         [Key]

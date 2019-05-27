@@ -22,13 +22,13 @@ namespace RequestAccounting3.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult Info()
         {
 
-            return View();
+            return this.View();
         }
 
 
