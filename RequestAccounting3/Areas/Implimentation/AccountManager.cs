@@ -27,7 +27,11 @@
         public async Task<bool> SignInAsync(LoginViewModel user)
         {
             //последний параметр: блокировка при сбое = false 
-            var outcome = await this.signInManager.PasswordSignInAsync(user.UserName, user.Password, user.RememberMe, false);
+            var outcome = await this.signInManager.PasswordSignInAsync(
+                              user.UserName,
+                              user.Password,
+                              user.RememberMe, 
+                              false);
             return outcome.Succeeded;           
         }
 

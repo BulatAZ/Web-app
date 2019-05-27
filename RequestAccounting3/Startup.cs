@@ -37,7 +37,7 @@
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<UserDBContext>();
-
+            // метод внедрения зависимостей
             services.AddTransient<IRequestManager, RequestManager>();
             services.AddTransient<IAccountManager, AccountManager>();            
             
@@ -69,8 +69,6 @@
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-
         }
     }
 }

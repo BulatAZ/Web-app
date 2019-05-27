@@ -10,36 +10,39 @@ namespace RequestAccounting3.Controllers
         private readonly IAccountManager account;
 
         public AccountController(IAccountManager _account)
-        {           
-            account = _account;
+        {
+            this.account = _account;
         }
+
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            return this.View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel newUser)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {               
                 // добавляем пользователя
                        
-                if (await account.RegisterAsync(newUser))
+                if (await this.account.RegisterAsync(newUser))
                 {
                     // установка куки. bool: является ли куки постоянным(true) или сеансовым(false) время жизни куки                   
-                    await account.SignInAsync(newUser, false);
-                    return RedirectToAction("Index", "Home");
+                    await this.account.SignInAsync(newUser, false);
+                    return this.RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    foreach (var error in account.identityResult.Errors)
+                    foreach (var error in this.account.identityResult.Errors)
                     {
-                        ModelState.AddModelError(string.Empty, error.Description);
+                        this.ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
             }
-            return View(newUser);
+
+            return this.View(newUser);
         }
         /// <summary>
         /// Авторизация. 
@@ -47,33 +50,34 @@ namespace RequestAccounting3.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
+            return this.View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {               
-                if (await account.SignInAsync(model))
+                if (await this.account.SignInAsync(model))
                 {
                     // проверяем, принадлежит ли URL приложению
-                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && this.Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect(model.ReturnUrl);
+                        return this.Redirect(model.ReturnUrl);
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return this.RedirectToAction("Index", "Home");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Wrong login and (or) password");
+                    this.ModelState.AddModelError("", "Wrong login and (or) password");
                 }
             }
-            return View(model);
+
+            return this.View(model);
         }
 
         [HttpPost]
@@ -81,8 +85,8 @@ namespace RequestAccounting3.Controllers
         public async Task<IActionResult> LogOut()
         {
             // удаляем аутентификационные куки          
-            await account.SigOutAsync();
-            return RedirectToAction("Index", "Home");
+            await this.account.SigOutAsync();
+            return this.RedirectToAction("Index", "Home");
         }
     }
 }

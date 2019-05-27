@@ -18,6 +18,5 @@
         void AddRequest(RequestCreate request);        
 
         void UpdateStatus(RequestChange theChangedRequest);
-
     }
 }
