@@ -1,0 +1,39 @@
+﻿@model RequestAccounting3.Models.Requests.RequestCreate
+@{
+    ViewData["Title"] = "New request";
+}
+<h3>Form for new request</h3>
+<p>Fill this field:</p>
+<form method="post" class="form-horizontal" role="form">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="customerFirstName"></label><br />
+        <input asp-for="customerFirstName" />
+        <span asp-validation-for="customerFirstName"></span>
+    </div>
+    <div>
+        <label asp-for="customerLastName"></label><br />
+        <input asp-for="customerLastName" />
+        <span asp-validation-for="customerLastName"></span>
+    </div>
+    <div>
+        <label asp-for="customerPhone"></label><br />
+        <input asp-for="customerPhone" />
+        <span asp-validation-for="customerPhone"></span>
+    </div>
+    <div>
+        <label asp-for="text"></label><br />
+        <input asp-for="text" />
+        <span asp-validation-for="text"></span>
+    </div>
+    <div>
+        <label asp-for="requestDate"></label><br />
+        <input asp-for="requestDate" />
+        <span asp-validation-for="requestDate"></span>
+    </div>
+    <div>
+        <input type="submit" value="Enter" />
+    </div>
+</form>
+
+    

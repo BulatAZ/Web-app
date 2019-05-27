@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RequestAccounting3.Models.Requests.RequestView>
+
+@{
+    ViewData["Title"] = "Request list";
+}
+
+<h3>Requests</h3>
+<ul class="nav navbar-nav">
+    <li><a href="~/Requests/Create" class="navbar-brand">New request</a></li>
+</ul>
+
+<table class="table-condensed">
+    <tr>
+        <td>ID</td>
+        <td>Customer name</td>
+        <td>Phone</td>
+        <td>Text</td>
+        <td>Status</td>
+        <td>Request date</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.id</td>
+        <td>@item.customerFirstName @item.customerLastName</td>
+        <td>@item.customerPhone</td>
+        <td>@item.text</td>
+        <td>@item.status</td>
+        <td>@item.requestDate</td>
+    </tr>
+    }
+</table>

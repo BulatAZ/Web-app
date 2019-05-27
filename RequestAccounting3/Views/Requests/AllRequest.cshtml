@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RequestAccounting3.Models.Requests.RequestView>
+
+@{
+    ViewData["Title"] = "All request";
+}
+
+<h3>Requests</h3>
+<table class="table-condensed">
+    <tr>
+        <td>ID</td>
+        <td>Author id</td>
+        <td>Customer name</td>       
+        <td>Phone</td>
+        <td>Text</td>
+        <td>Status</td>
+        <td>Registration date</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.operatorId</td>
+            <td>@item.customerFirstName @item.customerLastName</td>
+            <td>@item.customerPhone</td>
+            <td>@item.text</td>
+            <td>@item.status</td>
+            <td>@item.requestDate</td>
+            <td>               
+                <form asp-controller="Requests" asp-action="ChangeStatus" asp-route-id="@item.id" method="get">
+                    <button type="submit" class="btn btn-sm btn-primary">Change</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,29 @@
+﻿@model RequestAccounting3.Models.Requests.RequestChange
+@{
+    ViewData["Title"] = "Change status";
+}
+<form asp-action="ChangeStatus" asp-controller="Requests" method="post">
+    <table class="table-condensed">
+        <tr>
+            <td>ID</td>
+            <td>Author id</td>
+            <td>Customer name</td>
+            <td>Phone</td>
+            <td>Text</td>
+            <td>Request date</td>
+            <td>Choose status</td>
+        </tr>
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.operatorId</td>
+            <td>@Model.customerFirstName @Model.customerLastName </td>
+            <td>@Model.customerPhone</td>
+            <td>@Model.text</td>
+            <td>@Model.requestDate</td>
+            <td>@Html.DropDownListFor(model => model.statusId, ViewBag.Status as SelectList)</td>
+    </tr>
+</table>
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+</div>
+</form>
