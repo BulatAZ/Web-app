@@ -9,9 +9,11 @@
         public string operatorId { get; set; }
         [Required]
         [Display(Name = "Customer first name")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "No more than 25 characters")]
         public string customerFirstName { get; set; }
         [Required]
         [Display(Name = "Customer last name")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "No more than 25 characters")]
         public string customerLastName { get; set; }
         [Required]
         [Display(Name = "Phone number")]

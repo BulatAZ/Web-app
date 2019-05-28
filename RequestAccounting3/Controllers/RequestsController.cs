@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using RequestAccounting3.Areas.Implimentation;
-using RequestAccounting3.Areas.Interfaces;
-using RequestAccounting3.Models;
-using RequestAccounting3.Models.Requests;
-
+﻿// ReSharper disable StyleCop.SA1633
+// ReSharper disable StyleCop.SA1600
 namespace RequestAccounting3.Controllers
 {
-    
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
+    using RequestAccounting3.Areas.Interfaces;
+    using RequestAccounting3.Models.Requests;
+
     public class RequestsController : Controller
     {       
         private IRequestManager requestManager;
@@ -22,59 +19,66 @@ namespace RequestAccounting3.Controllers
         // поскольку в классе Startup в методе ConfigureServices
         // контекст данных устанавливается как сервис, то в конструкторе контроллера можем получить переданный контекст данных.
         
-        public RequestsController(IRequestManager request, IAccountManager accoountManager)
+        public RequestsController(IRequestManager request, IAccountManager accountManager)
         {      
             this.requestManager = request;
-            this.accountManager = accoountManager;
+            this.accountManager = accountManager;
         }
+
         [Authorize(Roles = "operator")]
         public async Task<ActionResult> OperatorRequest()
         {            
-            string userId = await this.accountManager.GetUserIdAsync(this.User.Identity.Name);
-            var requests = this.requestManager.GetOperatorRequestList(userId);            
+            var userId = await this.accountManager.GetUserIdAsync(this.User.Identity.Name);
+            var requests = await this.requestManager.GetOperatorRequestListAsync(userId);
+           
             return this.View(requests);           
         }
+
         [Authorize(Roles = "operator")]
         public IActionResult Create()
         {
             return this.View();
         }
+
         [HttpPost]       
         public async Task<ActionResult> Create(RequestCreate newRequest)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
-                string userId = await this.accountManager.GetUserIdAsync(User.Identity.Name);
-                //await Task.Yield(); ////
-                newRequest.operatorId = userId;
-                this.requestManager.AddRequest(newRequest);
-                return RedirectToAction("Index", "Home");
-            }        
+                newRequest.operatorId = await this.accountManager.GetUserIdAsync(this.User.Identity.Name);             
+                await this.requestManager.AddRequestAsync(newRequest);
+                return this.RedirectToAction("Index", "Home");
+            }
+            
             return this.View(newRequest);
         }
 
         [Authorize(Roles = "engineer")]
-        public IActionResult AllRequest()
+        public async Task<IActionResult> AllRequest()
         {
-            var requests = this.requestManager.GetRequestList();
+            var requests = await this.requestManager.GetRequestListAsync();
             return this.View(requests);
         }
 
         [HttpGet]
         [Authorize(Roles = "engineer")]
-        // првильно работает только при таком - id - наименовании параметра. ?????
-        public IActionResult ChangeStatus(int id)
+        
+        
+
+        [HttpGet]
+        // правильно работает только при наименовании параметра как  id. почему?????
+        public async Task<IActionResult> ChangeStatus(int id)
         {
-            var request = this.requestManager.GetRequest(id);
-            // второй параметр это value, третий параметр - имя поли
-            this.ViewBag.Status = new SelectList(this.requestManager.GetStatusList(), "id", "name");
-            return this.View(request);
+            var statusList = await this.requestManager.GetStatusListAsync();
+            this.ViewBag.Status = new SelectList(statusList, "id", "name");
+            //var request = new RequestChange() { id = id };
+            return this.View(new RequestChange() { id = id });
         }
-      
+
         [HttpPost]
-        public IActionResult ChangeStatus(RequestChange theChangedRequest)
+        public async Task<IActionResult> ChangeStatus(RequestChange theChangedRequest)
         {
-            this.requestManager.UpdateStatus(theChangedRequest);            
+            await this.requestManager.UpdateStatusAsync(theChangedRequest);
             return this.RedirectToAction("AllRequest", "Requests");
         }
     }

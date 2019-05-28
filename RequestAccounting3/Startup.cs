@@ -56,19 +56,21 @@
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            // возможность работы с статич. файлами (папка wwwroot)
+            else
+            {                
+                app.UseExceptionHandler("/error");
+            }
+           
             app.UseStaticFiles();
-
-            // чтобы использовать Identity
             app.UseAuthentication();
-
-            app.UseMvc(routes =>
+            
+            app.UseMvcWithDefaultRoute();
+            /*app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            });*/
         }
     }
 }

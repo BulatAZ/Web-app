@@ -7,9 +7,9 @@
     {
         [Key]
         public int id { get; set; }
-        [Required]
+        [Required]      
         public string firstName { get; set; }
-        [Required]
+        [Required]        
         public string lastName { get; set; }
         [Required]
         public string phone { get; set; }        

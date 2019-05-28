@@ -10,9 +10,8 @@
     public class SampleData
     {              
        
-        public static void Initialize(RequestDBContext context)
-        {
-            
+        public static void InitializeStatusAsync(RequestDBContext context)
+        {           
             if (!context.Statuses.Any())
             {
                 context.Statuses.AddRange(
@@ -24,7 +23,7 @@
             }
         }
 
-        public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public static async Task InitializeUsersAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             string adminName = "admin";            
             string operatorName = "Tom";

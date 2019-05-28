@@ -6,14 +6,17 @@
     {
         [Required]
         [Display(Name = "Login")]
+        [StringLength(20, MinimumLength = 6, ErrorMessage = "The string length must be between 6 and 20 characters")]
         public string UserName { get; set; }
 
         [Required]
         [Display(Name = "First name")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "No more than 25 characters")]
         public string firstName { get; set; }
 
         [Required]
         [Display(Name = "Last name")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "No more than 25 characters")]
         public string lastName { get; set; }
 
         [Required]

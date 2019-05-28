@@ -5,10 +5,9 @@
 }
 
 <h3>Requests</h3>
-<table class="table-condensed">
+<table class="table table-striped">
     <tr>
         <td>ID</td>
-        <td>Author id</td>
         <td>Customer name</td>       
         <td>Phone</td>
         <td>Text</td>
@@ -20,7 +19,6 @@
     {
         <tr>
             <td>@item.id</td>
-            <td>@item.operatorId</td>
             <td>@item.customerFirstName @item.customerLastName</td>
             <td>@item.customerPhone</td>
             <td>@item.text</td>
@@ -28,7 +26,7 @@
             <td>@item.requestDate</td>
             <td>               
                 <form asp-controller="Requests" asp-action="ChangeStatus" asp-route-id="@item.id" method="get">
-                    <button type="submit" class="btn btn-sm btn-primary">Change</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Change status</button>
                 </form>
             </td>
         </tr>

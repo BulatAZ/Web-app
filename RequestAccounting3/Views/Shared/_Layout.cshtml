@@ -16,8 +16,7 @@
                     <li><a href="~/Home/Info" class="navbar-brand">Info</a></li>
                     @if (User.IsInRole("admin"))
                     {
-                        <li><a href="~/Roles/Index" class="navbar-brand">Roles page</a></li>
-                        <li><a href="~/Users/Index" class="navbar-brand">Users page</a></li>
+                        <li><a href="~/Roles/Index" class="navbar-brand">Roles page</a></li>                       
                     }                  
                 </ul>
                 <partial name="_LoginPartial" />

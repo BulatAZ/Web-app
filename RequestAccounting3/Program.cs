@@ -14,30 +14,31 @@
 
     public class Program
     {
-        public static async Task Main(string[] args)
-        //public static void Main (string[] args)
+        //public static async Task Main(string[] args)
+        public static void Main (string[] args)
         {
             //CreateWebHostBuilder(args).Build().Run();            
             var host = CreateWebHostBuilder(args).Build();
 
-            using (var scope = host.Services.CreateScope())
+            /*using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 try
                 {
                     var context = services.GetRequiredService<RequestDBContext>();
-                    SampleData.Initialize(context);
+                    SampleData.InitializeStatusAsync(context);
 
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                    await SampleData.InitializeAsync(userManager, rolesManager);
+                    await SampleData.InitializeUsersAsync(userManager, rolesManager);
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred while seeding the database.");
                 }
-            }
+            }*/
+
             host.Run();
         }
 

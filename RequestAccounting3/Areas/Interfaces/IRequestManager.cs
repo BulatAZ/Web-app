@@ -1,22 +1,26 @@
-﻿namespace RequestAccounting3.Areas.Interfaces
+﻿// ReSharper disable StyleCop.SA1633
+namespace RequestAccounting3.Areas.Interfaces
 {
+    using System.Collections;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using RequestAccounting3.Models;
     using RequestAccounting3.Models.Requests;
 
     public interface IRequestManager
-    {
-        List<Status> GetStatusList();
+    {     
 
-        IEnumerable<RequestView> GetOperatorRequestList(string userId);
+        Task <List<Status>> GetStatusListAsync();
 
-        IEnumerable<RequestView> GetRequestList();
+        Task<IEnumerable<RequestView>> GetOperatorRequestListAsync(string userId);
 
-        RequestChange GetRequest(int requestId);
+        Task<IEnumerable<RequestView>> GetRequestListAsync();
 
-        void AddRequest(RequestCreate request);        
+        Task <RequestChange> GetRequestAsync(int requestId);
 
-        void UpdateStatus(RequestChange theChangedRequest);
+        Task AddRequestAsync(RequestCreate request);
+
+        Task UpdateStatusAsync(RequestChange theChangedRequest);
     }
 }

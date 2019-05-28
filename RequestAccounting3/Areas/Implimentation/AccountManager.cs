@@ -10,7 +10,6 @@
 
     public class AccountManager : IAccountManager
     {
-
         private readonly SignInManager<User> signInManager;
         private readonly UserManager<User> userManager;
 
@@ -62,8 +61,8 @@
 
         public async Task<string> GetUserIdAsync(string userName)
         {            
-           var user = await this.userManager.FindByNameAsync(userName);
-           return user.Id;
+           var userOperator = await this.userManager.FindByNameAsync(userName);
+           return userOperator.Id;
         }
     }
 }
