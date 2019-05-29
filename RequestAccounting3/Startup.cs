@@ -63,7 +63,7 @@
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                logger.LogInformation("is development true");
+                logger.LogInformation("is development true");               
             }
             else
             {                

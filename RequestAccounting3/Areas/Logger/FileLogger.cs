@@ -1,4 +1,5 @@
-﻿namespace RequestAccounting3.Areas.Loger
+﻿// ReSharper disable StyleCop.SA1600
+namespace RequestAccounting3.Areas.Loger
 {
     using System;
     using System.IO;
