@@ -25,8 +25,7 @@ namespace RequestAccounting3.Controllers
         {
             if (this.ModelState.IsValid)
             {               
-                // добавляем пользователя
-                       
+                // добавляем пользователя               
                 if (await this.account.RegisterAsync(newUser))
                 {
                     // установка куки. bool: является ли куки постоянным(true) или сеансовым(false) время жизни куки                   

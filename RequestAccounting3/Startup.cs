@@ -1,5 +1,7 @@
 ﻿namespace RequestAccounting3
 {
+    using System.IO;
+
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
@@ -39,19 +41,24 @@
                 .AddEntityFrameworkStores<UserDBContext>();
             // метод внедрения зависимостей
             services.AddTransient<IRequestManager, RequestManager>();
-            services.AddTransient<IAccountManager, AccountManager>();            
-            
+            services.AddTransient<IAccountManager, AccountManager>();
+            services.AddTransient<IRolesManager, RolesManager>();
+
             //подключаем сервис MVC, предоставляется возможность работы с ним
             services.AddMvc();
         }
 
         //Метод Configure устанавливает, как приложение будет обрабатывать запрос.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
+            var logger = loggerFactory.CreateLogger("FileLogger");
+
             /*Таким образом, если имя среды имеет значение "Development", то есть приложение находится
             в состоянии разработки, то при ошибке разработчик увидит детальное описание ошибки. 
             Если же приложение развернуто на хостинге и соответственно имеет другое имя хостирующей среды, 
             то простой пользователь при ошибке ничего не увидит*/
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

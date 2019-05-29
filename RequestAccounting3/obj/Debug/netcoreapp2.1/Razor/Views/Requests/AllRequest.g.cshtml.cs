@@ -147,7 +147,7 @@ namespace AspNetCore
             WriteLiteral("</td>\r\n            <td>               \r\n                ");
             EndContext();
             BeginContext(737, 217, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dbdc4202611e4e278bf359c09f11b80a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d712120d8ed4559a1481d70ca6452fd", async() => {
                 BeginContext(832, 115, true);
                 WriteLiteral("\r\n                    <button type=\"submit\" class=\"btn btn-sm btn-primary\">Change status</button>\r\n                ");
                 EndContext();

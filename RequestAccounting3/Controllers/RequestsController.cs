@@ -62,16 +62,13 @@ namespace RequestAccounting3.Controllers
 
         [HttpGet]
         [Authorize(Roles = "engineer")]
-        
-        
-
+                
         [HttpGet]
-        // правильно работает только при наименовании параметра как  id. почему?????
+        // почему правильно работает только при наименовании параметра как  id ?????
         public async Task<IActionResult> ChangeStatus(int id)
         {
             var statusList = await this.requestManager.GetStatusListAsync();
-            this.ViewBag.Status = new SelectList(statusList, "id", "name");
-            //var request = new RequestChange() { id = id };
+            this.ViewBag.Status = new SelectList(statusList, "id", "name");          
             return this.View(new RequestChange() { id = id });
         }
 

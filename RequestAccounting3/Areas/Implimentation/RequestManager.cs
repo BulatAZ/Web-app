@@ -19,7 +19,7 @@
         {
             this.context = context;
         }
-
+        // фильтрация?
         private IEnumerable<RequestView> GetOperatorRequestList(string userId)
         {       
          var requests = from request in this.context.Requests.Where(a => a.operatorId == userId)
@@ -98,29 +98,7 @@
         public async Task<IEnumerable<RequestView>> GetRequestListAsync()
         {
             return await Task.Run(this.GetRequestList);
-        }
-
-        private RequestChange GetRequest(int requestId)
-        {
-            var requestChange = from request in this.context.Requests.Where(req => req.id == requestId)
-                                join status in this.context.Statuses on request.statusId equals status.id
-                                join customer in this.context.Customer on request.customerId equals customer.id
-                                select new RequestChange
-                                {
-                                    id = request.id,
-                                    customerFirstName = customer.firstName,
-                                    customerLastName = customer.lastName,
-                                    text = request.text,
-                                    requestDate = request.requestDate,
-                                    customerPhone = customer.phone,                                   
-                                };          
-            return requestChange.First();
-        }
-
-        public async Task<RequestChange> GetRequestAsync(int requestId)
-        {
-            return await Task.Run(() => this.GetRequest(requestId));
-        }
+        }    
 
         private List<Status> GetStatusList()
         {
@@ -133,7 +111,7 @@
             return await Task.Run(this.GetStatusList);
         }
 
-        private void UpdateStatus (RequestChange theChangedRequest)
+        private void UpdateStatus(RequestChange theChangedRequest)
         {
             var request = this.context.Requests.FindAsync(theChangedRequest.id).Result;
             request.statusId = theChangedRequest.statusId;

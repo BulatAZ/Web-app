@@ -15,9 +15,7 @@ namespace RequestAccounting3.Areas.Interfaces
 
         Task<IEnumerable<RequestView>> GetOperatorRequestListAsync(string userId);
 
-        Task<IEnumerable<RequestView>> GetRequestListAsync();
-
-        Task <RequestChange> GetRequestAsync(int requestId);
+        Task<IEnumerable<RequestView>> GetRequestListAsync();  
 
         Task AddRequestAsync(RequestCreate request);
 
