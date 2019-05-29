@@ -58,7 +58,7 @@ namespace AspNetCore
             WriteLiteral("\r\n    <h3>Requests</h3>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li>");
             EndContext();
             BeginContext(210, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f304f61848149e6a2592143163500ff", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a412f5407694d1ba33671a3a6a3c25b", async() => {
                 BeginContext(259, 11, true);
                 WriteLiteral("New request");
                 EndContext();

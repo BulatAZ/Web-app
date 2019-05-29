@@ -12,6 +12,7 @@
 
     using RequestAccounting3.Areas.Implimentation;
     using RequestAccounting3.Areas.Interfaces;
+    using RequestAccounting3.Areas.Logger;
     using RequestAccounting3.Models;
 
     public class Startup
@@ -62,10 +63,12 @@
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                logger.LogInformation("is development true");
             }
             else
             {                
                 app.UseExceptionHandler("/error");
+                logger.LogInformation("is development false");
             }
            
             app.UseStaticFiles();
