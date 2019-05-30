@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using RequestAccounting3.Areas.Interfaces;
-using RequestAccounting3.Models.Users;
-using System.Threading.Tasks;
-
-namespace RequestAccounting3.Controllers
+﻿namespace RequestAccounting3.Controllers
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+
+    using RequestAccounting3.Areas.Interfaces;
+    using RequestAccounting3.Models.Users;
+
     public class AccountController : Controller
     {        
         private readonly IAccountManager account;
@@ -81,6 +84,7 @@ namespace RequestAccounting3.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> LogOut()
         {
             // удаляем аутентификационные куки          

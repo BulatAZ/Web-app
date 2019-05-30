@@ -40,7 +40,8 @@ namespace RequestAccounting3.Controllers
             return this.View();
         }
 
-        [HttpPost]       
+        [HttpPost]
+        [Authorize(Roles = "operator")]
         public async Task<ActionResult> Create(RequestCreate newRequest)
         {
             if (this.ModelState.IsValid)
@@ -61,9 +62,7 @@ namespace RequestAccounting3.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "engineer")]
-                
-        [HttpGet]
+        [Authorize(Roles = "engineer")]               
         // почему правильно работает только при наименовании параметра как  id ?????
         public async Task<IActionResult> ChangeStatus(int id)
         {
@@ -73,6 +72,7 @@ namespace RequestAccounting3.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "engineer")]
         public async Task<IActionResult> ChangeStatus(RequestChange theChangedRequest)
         {
             await this.requestManager.UpdateStatusAsync(theChangedRequest);

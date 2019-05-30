@@ -19,3 +19,1307 @@ Executing ViewResult, running view Index.
 Executed ViewResult - view Index executed in 66.5192ms.
 Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 245.7704ms
 Request finished in 508.7002ms 200 text/html; charset=utf-8
+is development true
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 30.6673ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 199.2672ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 615.0658ms
+Request finished in 1031.6202ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:5813/  0
+Request finished in 28.4781ms 200 
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.1202ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 142.8746ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 370.4219ms
+Request finished in 467.2608ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 232
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (118ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (86ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (76ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (92ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (56ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 718.3918ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 917.8951ms
+Request finished in 989.415ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.75ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 14.3002ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 78.7877ms
+Request finished in 218.7441ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/Create  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (55ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2593ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 74.3773ms.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 211.6858ms
+Request finished in 348.1214ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/OperatorRequest  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "OperatorRequest", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (45ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (80ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed action method RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 104.1277ms.
+Executing ViewResult, running view OperatorRequest.
+Executed DbCommand (137ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[id], [customer].[firstName] AS [customerFirstName], [customer].[lastName] AS [customerLastName], [a].[text], [a].[requestDate], [customer].[phone] AS [customerPhone], [status].[name] AS [status]
+FROM [Requests] AS [a]
+INNER JOIN [Statuses] AS [status] ON [a].[statusId] = [status].[id]
+INNER JOIN [Customer] AS [customer] ON [a].[customerId] = [customer].[id]
+WHERE [a].[operatorId] = @__userId_0
+Executed ViewResult - view OperatorRequest executed in 197.9555ms.
+Executed action RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3) in 462.0597ms
+Request finished in 591.9533ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/Create  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0311ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 16.4523ms.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 193.9757ms
+Request finished in 285.3352ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Requests/Create application/x-www-form-urlencoded 482
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) with arguments (RequestAccounting3.Models.Requests.RequestCreate) - Validation state: Valid
+Executed DbCommand (58ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (38ms) [Parameters=[@__newRequest_customerFirstName_0='?' (Size = 4000), @__newRequest_customerLastName_1='?' (Size = 4000), @__newRequest_customerPhone_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[id], [a].[firstName], [a].[lastName], [a].[phone]
+FROM [Customer] AS [a]
+WHERE (([a].[firstName] = @__newRequest_customerFirstName_0) AND ([a].[lastName] = @__newRequest_customerLastName_1)) AND ([a].[phone] = @__newRequest_customerPhone_2)
+Executed DbCommand (53ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customer] ([firstName], [lastName], [phone])
+VALUES (@p0, @p1, @p2);
+SELECT [id]
+FROM [Customer]
+WHERE @@ROWCOUNT = 1 AND [id] = scope_identity();
+Executed DbCommand (39ms) [Parameters=[@p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Requests] ([customerId], [operatorId], [requestDate], [statusId], [text])
+VALUES (@p3, @p4, @p5, @p6, @p7);
+SELECT [id]
+FROM [Requests]
+WHERE @@ROWCOUNT = 1 AND [id] = scope_identity();
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 488.6972ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 659.63ms
+Request finished in 785.0749ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.8388ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 4.8008ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 67.1303ms
+Request finished in 134.1244ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/LogOut application/x-www-form-urlencoded 225
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "LogOut", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) - Validation state: Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+Executed action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 21.0641ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) in 60.8819ms
+Request finished in 117.1723ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.0504ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 16.1638ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 156.599ms
+Request finished in 186.2641ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.041ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 13.4314ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 200.2612ms
+Request finished in 219.6031ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 232
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (75ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (74ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (48ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (56ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (53ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 360.7839ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 496.723ms
+Request finished in 510.428ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.733ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 5.4651ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 78.0926ms
+Request finished in 141.6036ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/Create  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0213ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 24.5283ms.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 184.258ms
+Request finished in 270.851ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Requests/Create application/x-www-form-urlencoded 494
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) with arguments (RequestAccounting3.Models.Requests.RequestCreate) - Validation state: Valid
+Executed DbCommand (67ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (22ms) [Parameters=[@__newRequest_customerFirstName_0='?' (Size = 4000), @__newRequest_customerLastName_1='?' (Size = 4000), @__newRequest_customerPhone_2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[id], [a].[firstName], [a].[lastName], [a].[phone]
+FROM [Customer] AS [a]
+WHERE (([a].[firstName] = @__newRequest_customerFirstName_0) AND ([a].[lastName] = @__newRequest_customerLastName_1)) AND ([a].[phone] = @__newRequest_customerPhone_2)
+Executed DbCommand (17ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customer] ([firstName], [lastName], [phone])
+VALUES (@p0, @p1, @p2);
+SELECT [id]
+FROM [Customer]
+WHERE @@ROWCOUNT = 1 AND [id] = scope_identity();
+Executed DbCommand (37ms) [Parameters=[@p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Requests] ([customerId], [operatorId], [requestDate], [statusId], [text])
+VALUES (@p3, @p4, @p5, @p6, @p7);
+SELECT [id]
+FROM [Requests]
+WHERE @@ROWCOUNT = 1 AND [id] = scope_identity();
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 209.7488ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 371.5722ms
+Request finished in 477.1171ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.7516ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 7.1704ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 59.4849ms
+Request finished in 162.3598ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/OperatorRequest  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "OperatorRequest", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (213ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (59ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed action method RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 71.0149ms.
+Executing ViewResult, running view OperatorRequest.
+Executed DbCommand (58ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[id], [customer].[firstName] AS [customerFirstName], [customer].[lastName] AS [customerLastName], [a].[text], [a].[requestDate], [customer].[phone] AS [customerPhone], [status].[name] AS [status]
+FROM [Requests] AS [a]
+INNER JOIN [Statuses] AS [status] ON [a].[statusId] = [status].[id]
+INNER JOIN [Customer] AS [customer] ON [a].[customerId] = [customer].[id]
+WHERE [a].[operatorId] = @__userId_0
+Executed ViewResult - view OperatorRequest executed in 73.3893ms.
+Executed action RequestAccounting3.Controllers.RequestsController.OperatorRequest (RequestAccounting3) in 768.2132ms
+Request finished in 915.3218ms 200 text/html; charset=utf-8
+is development true
+Request starting HTTP/1.1 DEBUG http://localhost:5813/  0
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Request finished in 1756.4057ms 200 
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (586ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 307.5299ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1578.9241ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 3568.214ms
+Request finished in 9013.4168ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Home/Info  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (743ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Info", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.433ms.
+Executing ViewResult, running view Info.
+Executed ViewResult - view Info executed in 601.9043ms.
+Executed action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) in 2508.0525ms
+Request finished in 5626.4343ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Requests/Create  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (635ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Requests"}. Executing action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3)
+Authorization was successful.
+Entity Framework Core 2.1.8-servicing-32085 initialized 'RequestDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Request starting HTTP/1.1 POST http://localhost:44339/Account/LogOut application/x-www-form-urlencoded 225
+Executed DbCommand (302ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (839ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executed action method RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2617ms.
+Route matched with {action = "LogOut", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3)
+Executing ViewResult, running view Create.
+Executing action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) - Validation state: Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+Executed ViewResult - view Create executed in 2051.467ms.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+Executed action RequestAccounting3.Controllers.RequestsController.Create (RequestAccounting3) in 5610.6265ms
+Executed action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1378.5003ms.
+Request finished in 7257.6801ms 200 text/html; charset=utf-8
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) in 2749.4851ms
+Request finished in 5665.5882ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 540.6959ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 584.0376ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 2746.7472ms
+Request finished in 3353.3016ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2,321ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 363.0079ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 7464.4171ms
+Request finished in 8306.0386ms 200 text/html; charset=utf-8
+is development true
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9994ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 249.8552ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 305.5965ms
+Request finished in 525.9133ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9702ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 15.3407ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 21.1407ms
+Request finished in 28.4414ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0911ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 3.6351ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 77.9031ms
+Request finished in 83.9127ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 237
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (48ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 544699bf-656c-40b1-805e-cd2da281a5c7.
+User 544699bf-656c-40b1-805e-cd2da281a5c7 failed to provide the correct password.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 108.0037ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 3.9312ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 205.4126ms
+Request finished in 236.4372ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 237
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (38ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (39ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (43ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 408.3766ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 469.9292ms
+Request finished in 474.4601ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4267ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 14.1348ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 16.5234ms
+Request finished in 38.1863ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Index  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 20.1443ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 30.1806ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 68.6311ms
+Request finished in 116.0386ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 33.7104ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 15.7734ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 53.9842ms
+Request finished in 73.5144ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=06e8d226-861e-45f3-8d16-b2d71513606f  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f) - Validation state: Valid
+Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 43.9345ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 21.6779ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 71.2099ms
+Request finished in 92.3869ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Edit application/x-www-form-urlencoded 284
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f, System.Collections.Generic.List`1[System.String]) - Validation state: Valid
+Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (101ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed DbCommand (10ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [AspNetUserRoles]
+WHERE [UserId] = @p0 AND [RoleId] = @p1;
+SELECT @@ROWCOUNT;
+Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 370.0856ms.
+Executing RedirectResult, redirecting to /Roles/UserList.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 450.3813ms
+Request finished in 472.2937ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.1883ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.8264ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 8.6163ms
+Request finished in 17.1317ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=06e8d226-861e-45f3-8d16-b2d71513606f  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f) - Validation state: Valid
+Executed DbCommand (19ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (23ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 54.5542ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 1.483ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 58.4815ms
+Request finished in 108.3502ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Edit application/x-www-form-urlencoded 284
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f, System.Collections.Generic.List`1[System.String]) - Validation state: Valid
+Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (40ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (2ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 111.8816ms.
+Executing RedirectResult, redirecting to /Roles/UserList.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 114.7474ms
+Request finished in 126.9457ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 10.2403ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.5158ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 24.0483ms
+Request finished in 40.2777ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=14b98e05-e52d-4cae-9985-f85b4d094044  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (14b98e05-e52d-4cae-9985-f85b4d094044) - Validation state: Valid
+Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 30.2323ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 1.6815ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 34.5926ms
+Request finished in 45.2096ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Edit application/x-www-form-urlencoded 269
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (14b98e05-e52d-4cae-9985-f85b4d094044, System.Collections.Generic.List`1[System.String]) - Validation state: Valid
+Executed DbCommand (17ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+Executed DbCommand (9ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [AspNetUserRoles]
+WHERE [UserId] = @p0 AND [RoleId] = @p1;
+SELECT @@ROWCOUNT;
+Executed DbCommand (6ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 96.7204ms.
+Executing RedirectResult, redirecting to /Roles/UserList.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 107.0843ms
+Request finished in 121.0155ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.5154ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.2773ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 9.2132ms
+Request finished in 24.2875ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/LogOut application/x-www-form-urlencoded 225
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "LogOut", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) - Validation state: Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+Executed action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 9.6139ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) in 13.1081ms
+Request finished in 27.5256ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4567ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 0.9864ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 3.0075ms
+Request finished in 5.0783ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0232ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 2.0088ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 12.1062ms
+Request finished in 15.5673ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 232
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (18ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+AuthenticationScheme: Identity.Application signed in.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 60.5594ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 89.1919ms
+Request finished in 95.1857ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3975ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.183ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 5.4762ms
+Request finished in 13.907ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/LogOut application/x-www-form-urlencoded 225
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "LogOut", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) - Validation state: Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+Executed action method RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1.2967ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.LogOut (RequestAccounting3) in 2.5942ms
+Request finished in 15.904ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.5411ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 0.9181ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 3.7484ms
+Request finished in 5.9775ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Account/Login  
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments () - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0221ms.
+Executing ViewResult, running view Login.
+Executed ViewResult - view Login executed in 1.6089ms.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 13.3441ms
+Request finished in 16.3619ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Account/Login application/x-www-form-urlencoded 237
+Route matched with {action = "Login", controller = "Account"}. Executing action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3)
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Executing action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) with arguments (RequestAccounting3.Models.Users.LoginViewModel) - Validation state: Valid
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (9ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (11ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+Executed action method RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 85.6535ms.
+Executing RedirectResult, redirecting to /.
+Executed action RequestAccounting3.Controllers.AccountController.Login (RequestAccounting3) in 92.5038ms
+Request finished in 95.7821ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.0689ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.5726ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 6.1725ms
+Request finished in 20.7909ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Index  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8.4079ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.9662ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 14.4703ms
+Request finished in 37.0037ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Create  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.223ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 18.6791ms.
+Executed action RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3) in 21.73ms
+Request finished in 36.5071ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Create application/x-www-form-urlencoded 246
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Create", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3) with arguments (super  operator) - Validation state: Valid
+Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (30ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+Executed action method RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 110.4558ms.
+Executing RedirectResult, redirecting to /Roles.
+Executed action RequestAccounting3.Controllers.RolesController.Create (RequestAccounting3) in 115.6332ms
+Request finished in 130.8686ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.5428ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.378ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 10.277ms
+Request finished in 23.5277ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 24.7206ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.5473ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 29.954ms
+Request finished in 45.5297ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=06e8d226-861e-45f3-8d16-b2d71513606f  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f) - Validation state: Valid
+Executed DbCommand (46ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 57.2827ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 2.9364ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 62.933ms
+Request finished in 77.9564ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Edit application/x-www-form-urlencoded 306
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f, System.Collections.Generic.List`1[System.String]) - Validation state: Valid
+Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+Executed DbCommand (21ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+Executed DbCommand (3ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[firstName], [u].[lastName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PhoneNumber] = @p9, [PhoneNumberConfirmed] = @p10, [SecurityStamp] = @p11, [TwoFactorEnabled] = @p12, [UserName] = @p13, [firstName] = @p14, [lastName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 136.6283ms.
+Executing RedirectResult, redirecting to /Roles/UserList.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 142.2758ms
+Request finished in 166.2835ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 5.3451ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.3559ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 10.864ms
+Request finished in 20.5722ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=06e8d226-861e-45f3-8d16-b2d71513606f  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f) - Validation state: Valid
+Executed DbCommand (23ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 31.7335ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 1.7017ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 36.0997ms
+Request finished in 54.7189ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Index  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.2223ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 2.0435ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 6.7358ms
+Request finished in 19.3975ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44339/Roles/Delete/a5e42eb7-ce41-4c7a-8c34-c549d6ed1bcb application/x-www-form-urlencoded 225
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Delete", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Delete (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Delete (RequestAccounting3) with arguments (a5e42eb7-ce41-4c7a-8c34-c549d6ed1bcb) - Validation state: Valid
+Executed DbCommand (11ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ConcurrencyStamp], [u].[Name], [u].[NormalizedName]
+FROM [AspNetRoles] AS [u]
+WHERE [u].[Id] = @__roleId_0
+Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [AspNetRoles]
+WHERE [Id] = @p0 AND [ConcurrencyStamp] = @p1;
+SELECT @@ROWCOUNT;
+Executed action method RequestAccounting3.Controllers.RolesController.Delete (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 76.7706ms.
+Executing RedirectResult, redirecting to /Roles.
+Executed action RequestAccounting3.Controllers.RolesController.Delete (RequestAccounting3) in 81.7211ms
+Request finished in 98.6191ms 302 
+Request starting HTTP/1.1 GET http://localhost:44339/Roles  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8.7557ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.5805ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 12.964ms
+Request finished in 27.4352ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/UserList  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "UserList", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[firstName], [a].[lastName]
+FROM [AspNetUsers] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.827ms.
+Executing ViewResult, running view UserList.
+Executed ViewResult - view UserList executed in 1.7025ms.
+Executed action RequestAccounting3.Controllers.RolesController.UserList (RequestAccounting3) in 9.0067ms
+Request finished in 19.6631ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Edit?userid=06e8d226-861e-45f3-8d16-b2d71513606f  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Edit", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) with arguments (06e8d226-861e-45f3-8d16-b2d71513606f) - Validation state: Valid
+Executed DbCommand (16ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Email], [e].[EmailConfirmed], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[TwoFactorEnabled], [e].[UserName], [e].[firstName], [e].[lastName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 33.2714ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 1.2663ms.
+Executed action RequestAccounting3.Controllers.RolesController.Edit (RequestAccounting3) in 37.9294ms
+Request finished in 51.467ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Roles/Index  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Roles"}. Executing action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3)
+Authorization was successful.
+Executing action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) - Validation state: Valid
+Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executed action method RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 24.5374ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 2.2796ms.
+Executed action RequestAccounting3.Controllers.RolesController.Index (RequestAccounting3) in 39.2924ms
+Request finished in 52.8446ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Home/Info  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Info", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.195ms.
+Executing ViewResult, running view Info.
+Executed ViewResult - view Info executed in 6.2167ms.
+Executed action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) in 8.3483ms
+Request finished in 21.3487ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Home/Index  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Index", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) - Validation state: Valid
+Request on index from homeC
+Executed action method RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3311ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 1.2019ms.
+Executed action RequestAccounting3.Controllers.HomeController.Index (RequestAccounting3) in 3.4223ms
+Request finished in 11.2512ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44339/Home/Info  
+Entity Framework Core 2.1.8-servicing-32085 initialized 'UserDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0
+Route matched with {action = "Info", controller = "Home"}. Executing action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3)
+Executing action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) - Validation state: Valid
+Executed action method RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0189ms.
+Executing ViewResult, running view Info.
+Executed ViewResult - view Info executed in 1.4321ms.
+Executed action RequestAccounting3.Controllers.HomeController.Info (RequestAccounting3) in 5.1316ms
+Request finished in 14.2651ms 200 text/html; charset=utf-8
