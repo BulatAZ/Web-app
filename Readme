@@ -1,0 +1,6 @@
+Program wrote on ASP.NET Core MVC
+
+This program can realize part of call center(or other system). 
+n app have 3 roles (with Identity): admin, engineer (who can work with request, 
+in my app he change request status) and operator (who add new request on DB)
+For DB I used local SQL server (EntityFramework, code first)
